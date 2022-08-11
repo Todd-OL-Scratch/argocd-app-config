@@ -21,3 +21,24 @@ spec:
     automated:
       selfHeal: true
       prune: true
+  
+  rules:
+  - host: foobar.com
+    http:
+      paths:
+      - backend:
+          serviceName: foobar
+          servicePort: 80
+  - host: api.foobar.com
+    http:
+      paths:
+      - backend:
+          serviceName: foobar
+          servicePort: 80
+  - host: admin.foobar.com
+    http:
+      paths:
+      - backend:
+          serviceName: foobar
+          servicePort: 80
+   
