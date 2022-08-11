@@ -32,19 +32,25 @@ spec:
   - host: foobar.com
     http:
       paths:
-      - backend:
-          serviceName: foobar
+      - path: /
+        pathType: Prefix
+        backend:
+          serviceName: myapp
           servicePort: 80
   - host: api.foobar.com
     http:
       paths:
-      - backend:
-          serviceName: foobar
+      - path: /
+        pathType: Prefix
+        backend:
+          serviceName: myapp
           servicePort: 80
   - host: admin.foobar.com
     http:
       paths:
-      - backend:
-          serviceName: foobar
+      - path: /
+        pathType: Prefix
+        backend:
+          serviceName: myapp
           servicePort: 80
    
