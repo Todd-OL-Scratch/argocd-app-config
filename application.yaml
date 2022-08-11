@@ -22,10 +22,11 @@ spec:
       selfHeal: true
       prune: true
 ---
-apiVersion: v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: web-ingress
+  namespace: ingress-nginx
 spec:
   rules:
   - host: foobar.com
