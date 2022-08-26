@@ -29,7 +29,7 @@ metadata:
   namespace: ingress-nginx
 spec:
   rules:
-  - host: foobar.com
+  - host: test.foobar.com
     http:
       paths:
       - path: /
