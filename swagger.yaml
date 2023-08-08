@@ -100,7 +100,7 @@ paths:
 
   # Health check
   /core-data-bridge/v2/health-check:
-    $ref: './resources/core-data-bridge/health-check/health-check.yaml'
+    $ref: ./resources/core-data-bridge/health-check/health-check.yaml
 
   # Authentication
   /core-data-bridge/v2/authentication/authentication-attempts:
