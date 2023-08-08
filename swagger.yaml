@@ -9,6 +9,8 @@ info:
     name: Unlicensed
     url: https://raceroster.com
 
+url: https://www.example.com/
+
 tags:
   - name: health-check
     x-displayName: Health Check
