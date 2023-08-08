@@ -1,0 +1,200 @@
+openapi: 3.0.3
+
+info:
+  title: Core Data Bridge V2
+  description: |
+    Bridges core data to other projects
+  version: 0.21.0
+  license:
+    name: Unlicensed
+    url: https://raceroster.com
+
+tags:
+  - name: health-check
+    x-displayName: Health Check
+    description: Health Check
+  - name: authentication
+    x-displayName: Authentication
+    description: Authentication
+  - name: series-settings
+    x-displayName: Series Settings
+    description: Series settings
+  - name: event-participant-counts
+    x-displayName: Event Participant Counts
+    description: Event Participant Counts
+  - name: event-participant-count-settings
+    x-displayName: Event Participant Count Settings
+    description: Event Participant Count Settings
+  - name: race-roster-events
+    x-displayName: Race Roster Events
+    description: Race Roster Events
+  - name: user-translations
+    x-displayName: User Translations
+    description: User Translations
+  - name: participants
+    x-displayName: Participants
+    description: Participants
+  - name: associations
+    x-displayName: Associations
+    description: Associations
+  - name: authorization
+    x-displayName: Authorization
+    description: Authorization
+  - name: product-selections
+    x-displayName: Product Selections
+    description: Product Selections
+  - name: registration-question-answers
+    x-displayName: Registration Question Answers
+    description: Registration Question Answers
+  - name: payment-profiles
+    x-displayName: Payment Profiles
+    description: Payment Profiles
+  - name: teams
+    x-displayName: Teams
+    description: Teams
+  - name: race-roster-sub-events
+    x-displayName: Race Roster Sub-events
+    description: Race Roster Sub-events
+  - name: race-roster-accounts
+    x-displayName: Race Roster Accounts
+    description: Race Roster Accounts
+  - name: event-details-page-results-link
+    x-displayName: Event Details Page Results Link
+    description: Event Details Page Results Link
+  - name: race-roster-event-contact-information
+    x-displayName: Race Roster Event Contact Information
+    description: Race Roster Event Contact Information
+  - name: affiliate-trackers
+    x-displayName: Affiliate Trackers
+    description: Affiliate Trackers
+
+x-tagGroups:
+  - name: Core data bridge
+    tags:
+      - health-check
+      - authentication
+      - series-settings
+      - event-participant-counts
+      - event-participant-count-settings
+      - race-roster-events
+      - user-translations
+      - participants
+      - associations
+      - authorization
+      - product-selections
+      - registration-question-answers
+      - payment-profiles
+      - teams
+      - race-roster-sub-events
+      - race-roster-accounts
+      - event-details-page-results-link
+      - race-roster-event-contact-information
+      - affiliate-trackers
+
+servers:
+  - url: 'https://zv8i7ziye1.execute-api.us-east-1.amazonaws.com'
+    description: ue1dev1 internal API Gateway
+
+paths:
+
+  # Health check
+  /core-data-bridge/v2/health-check:
+    $ref: './resources/core-data-bridge/health-check/health-check.yaml'
+
+  # Authentication
+  /core-data-bridge/v2/authentication/authentication-attempts:
+    $ref: './resources/core-data-bridge/authentication/authentication-attempts.yaml'
+
+  # Series settings
+  /core-data-bridge/v2/series-settings/{eventUuid}:
+    $ref: './resources/core-data-bridge/series-settings/series-settings.yaml'
+
+  # Participant counts
+  /core-data-bridge/v2/event-participant-counts/{eventUuid}:
+    $ref: './resources/core-data-bridge/event-participant-counts/event-participant-counts.yaml'
+
+  /core-data-bridge/v2/event-participant-count-settings/{eventUuid}:
+    $ref: './resources/core-data-bridge/event-participant-count-settings/event-participant-count-settings.yaml'
+
+
+  # Race Roster Event
+  /core-data-bridge/v2/race-roster-events:
+    $ref: './resources/core-data-bridge/race-roster-events/race-roster-events-index.yaml'
+
+  /core-data-bridge/v2/race-roster-events/{uuid-or-id}:
+    $ref: './resources/core-data-bridge/race-roster-events/race-roster-events-by-identifier.yaml'
+
+  /core-data-bridge/v2/race-roster-events/{eventUuid}/affiliations/association:
+    $ref: './resources/core-data-bridge/race-roster-events/timer-association.yaml'
+
+  # User translations
+  /core-data-bridge/v2/user-translations:
+    $ref: './resources/core-data-bridge/user-translations/user-translations.yaml'
+
+  # Participant
+  /core-data-bridge/v2/participants:
+    $ref: './resources/core-data-bridge/participants/participants-index.yaml'
+
+  /core-data-bridge/v2/participants/{participantUuid}:
+    $ref: './resources/core-data-bridge/participants/participants-by-identifier.yaml'
+
+  # Associations
+
+  # Association Roles
+  /core-data-bridge/v2/associations/roles/{contextType}/{contextIdentifier}:
+    $ref: './resources/core-data-bridge/associations/roles/association-roles-by-context.yaml'
+
+  /core-data-bridge/v2/associations/roles:
+    $ref: './resources/core-data-bridge/associations/roles/association-roles.yaml'
+
+  /core-data-bridge/v2/authorization/roles:
+    $ref: './resources/core-data-bridge/authorization/authorization-roles-index.yaml'
+
+  # Product selections
+  /core-data-bridge/v2/product-selections:
+    $ref: './resources/core-data-bridge/product-selections/product-selections-index.yaml'
+
+  # Registration Question Answers
+  /core-data-bridge/v2/registration-question-answers:
+    $ref: './resources/core-data-bridge/registration-question-answers/registration-question-answers-index.yaml'
+
+  # Payment Profiles
+  /core-data-bridge/v2/payment-profiles:
+    $ref: './resources/core-data-bridge/payment-profiles/payment-profiles-index.yaml'
+
+  # Teams
+  /core-data-bridge/v2/teams:
+    $ref: './resources/core-data-bridge/teams/teams-index.yaml'
+
+  /core-data-bridge/v2/teams/{teamUuid}:
+    $ref: './resources/core-data-bridge/teams/team.yaml'
+
+  /core-data-bridge/v2/team-categories/{teamCategoryUuid}:
+    $ref: './resources/core-data-bridge/teams/team-category.yaml'
+
+  # Race Roster Sub-events
+  /core-data-bridge/v2/race-roster-sub-events/{subEventUuid}:
+    $ref: './resources/core-data-bridge/race-roster-sub-events/race-roster-sub-events-by-identifier.yaml'
+
+  # Race Roster Accounts
+  /core-data-bridge/v2/race-roster-accounts:
+    $ref: './resources/core-data-bridge/race-roster-accounts/race-roster-accounts-index.yaml'
+
+  /core-data-bridge/v2/race-roster-accounts/account-kingdom-inclusions:
+    $ref: './resources/core-data-bridge/race-roster-accounts/account-kingdom-inclusions.yaml'
+
+  # Event Details Page Results Link
+  /core-data-bridge/v2/event-details-page-results-link/{eventUuid}:
+    $ref: './resources/core-data-bridge/event-details-page-results-link/event-details-page-results-link.yaml'
+
+  # Race Roster Event Contact Information
+  /core-data-bridge/v2/race-roster-event-contact-information/{eventUuid}:
+    $ref: './resources/core-data-bridge/race-roster-event-contact-information/race-roster-event-contact-information.yaml'
+
+  # Affiliate Trackers
+  /core-data-bridge/v2/affiliate-trackers/{accountUuid}:
+    $ref: './resources/core-data-bridge/affiliate-trackers/affiliate-tracker.yaml'
+
+  # Payable Commission
+  /core-data-bridge/v2/payable-commissions:
+    $ref: './resources/core-data-bridge/payable-commissions/payable-commissions-index.yaml'
