@@ -10,7 +10,8 @@ info:
     url: https://raceroster.com
 
 servers:
-  - url: https://www.example.com
+  - url: https://zv8i7ziye1.execute-api.us-east-1.amazonaws.com
+    description: ue1dev1 internal API Gateway
 
 tags:
   - name: health-check
@@ -94,9 +95,6 @@ x-tagGroups:
       - race-roster-event-contact-information
       - affiliate-trackers
 
-servers:
-  - url: 'https://zv8i7ziye1.execute-api.us-east-1.amazonaws.com'
-    description: ue1dev1 internal API Gateway
 
 paths:
 
