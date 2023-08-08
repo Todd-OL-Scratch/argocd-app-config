@@ -10,7 +10,7 @@ info:
     url: https://raceroster.com
 
 servers:
-  - url: "https://www.example.com"
+  - url: https://www.example.com
 
 tags:
   - name: health-check
