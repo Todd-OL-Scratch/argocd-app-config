@@ -9,7 +9,8 @@ info:
     name: Unlicensed
     url: https://raceroster.com
 
-basePath: https://www.example.com/
+servers:
+  - url: "https://www.example.com"
 
 tags:
   - name: health-check
